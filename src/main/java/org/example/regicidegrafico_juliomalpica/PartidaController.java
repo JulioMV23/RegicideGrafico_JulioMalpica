@@ -42,11 +42,17 @@ public class PartidaController {
     private Label lblNombreJugador, lblContVida, lblContAtaque, lblContDefensa,
             lblContCastillo, lblContPosada, lblContJugadas, lblContDescartes;
 
+    /** Objeto Partida que contiene la lógica y datos de la partida actual */
     private Partida partida;
+    /** Lista de ImageViews que representan las cartas en mano */
     private ArrayList<ImageView> cartasMano = new ArrayList<>();
+    /** Imagen que representa el reverso de las cartas */
     private Image imagenReverso;
+    /** Indica si el jugador está en modo defensa */
     private boolean enModoDefensa = false;
+    /** Suma total de defensa acumulada durante el modo defensa */
     private int defensaTotal = 0;
+    /** Lista de cartas usadas para defensa en el turno actual */
     private ArrayList<Carta> cartasDefensa = new ArrayList<>();
 
 
@@ -400,20 +406,35 @@ public class PartidaController {
     }
 
     //Clic cartas
+    /** Invoca jugarCarta con índice 0 al hacer click en la primera carta */
     @FXML
     private void onCarta1Clicked() { jugarCarta(0); }
+
+    /** Invoca jugarCarta con índice 1 al hacer click en la segunda carta */
     @FXML
     private void onCarta2Clicked() { jugarCarta(1); }
+
+    /** Invoca jugarCarta con índice 2 al hacer click en la tercera carta */
     @FXML
     private void onCarta3Clicked() { jugarCarta(2); }
+
+    /** Invoca jugarCarta con índice 3 al hacer click en la cuarta carta */
     @FXML
     private void onCarta4Clicked() { jugarCarta(3); }
+
+    /** Invoca jugarCarta con índice 4 al hacer click en la quinta carta */
     @FXML
     private void onCarta5Clicked() { jugarCarta(4); }
+
+    /** Invoca jugarCarta con índice 5 al hacer click en la sexta carta */
     @FXML
     private void onCarta6Clicked() { jugarCarta(5); }
+
+    /** Invoca jugarCarta con índice 6 al hacer click en la séptima carta */
     @FXML
     private void onCarta7Clicked() { jugarCarta(6); }
+
+    /** Invoca jugarCarta con índice 7 al hacer click en la octava carta */
     @FXML
     private void onCarta8Clicked() { jugarCarta(7); }
 }

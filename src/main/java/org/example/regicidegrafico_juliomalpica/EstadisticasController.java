@@ -133,10 +133,30 @@ public class EstadisticasController {
             this.resultado = resultado;
         }
 
+        /**
+         * Obtiene la fecha en la que se realizó la partida.
+         * @return la fecha de la partida como cadena de texto
+         */
         public String getFecha() { return fecha; }
+        /**
+         * Obtiene el número de cartas jugadas durante la partida.
+         * @return la cantidad de cartas jugadas
+         */
         public int getCartasJugadas() { return cartasJugadas; }
+        /**
+         * Obtiene la cantidad de vida que le queda al enemigo al finalizar la partida.
+         * @return los puntos de vida restantes del enemigo
+         */
         public int getVidaEnemigo() { return vidaEnemigo; }
+        /**
+         * Obtiene el estado de la mano del jugador al final de la partida.
+         * @return una cadena que representa el estado de la mano
+         */
         public String getEstadoMano() { return estadoMano; }
+        /**
+         * Obtiene el resultado final de la partida (victorio o derrota).
+         * @return el resultado de la partida como cadena de texto
+         */
         public String getResultado() { return resultado; }
     }
 }

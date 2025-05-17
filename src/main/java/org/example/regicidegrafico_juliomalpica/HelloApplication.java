@@ -12,6 +12,9 @@ import java.io.IOException;
  *
  * Esta clase carga la interfaz gráfica definida en un archivo FXML
  * y configura la ventana principal de la aplicación (MENÚ).
+ *
+ * @author Julio Malpica
+ * @version 1.0
  */
 
 public class HelloApplication extends Application {

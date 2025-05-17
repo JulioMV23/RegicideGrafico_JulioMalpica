@@ -4,27 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Primer commit">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Carta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/EstadisticasController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Reglas_Regicide.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/estadisticas.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/imagenes/FondoEstadisticas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/imagenes/fondopartida.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/imagenes/portada.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/imagenes/reglas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/partida.fxml" afterDir="false" />
+    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 6 v1 terminada">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/EstadisticasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/EstadisticasController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,11 +95,31 @@
       <option name="project" value="LOCAL" />
       <updated>1746791254191</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Entrega tema 6 v1 terminada">
+      <option name="closed" value="true" />
+      <created>1747496297558</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747496297558</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primer commit" />
+    <MESSAGE value="Entrega tema 6 v1 terminada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 6 v1 terminada" />
   </component>
 </project>
