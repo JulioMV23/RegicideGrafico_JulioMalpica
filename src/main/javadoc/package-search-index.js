@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"org.example.regicidegrafico_juliomalpica","l":"org.example.regicidegrafico_juliomalpica"}];updateSearchResults();
