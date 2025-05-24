@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class PartidaController {
     /** ImageViews para mostrar los mazos y cartas visibles en la interfaz */
     @FXML
-    private ImageView imgvMazoPosada, imgvMazoCastillo, imgvMazoCarJugadas, imgvMazoCarDescartadas, imgvCastillo, imgvCartaJugada;
+    private ImageView imgvMazoPosada, imgvMazoCastillo, imgvMazoCarJugadas, imgvMazoCarDescartadas, imgvCastillo, imgvCartaJugada, imgvComodin;
 
     /** ImageViews para las cartas en la mano del jugador */
     @FXML
@@ -40,7 +40,7 @@ public class PartidaController {
     /** Etiquetas que muestran información del jugador y estado del juego */
     @FXML
     private Label lblNombreJugador, lblContVida, lblContAtaque, lblContDefensa,
-            lblContCastillo, lblContPosada, lblContJugadas, lblContDescartes;
+            lblContCastillo, lblContPosada, lblContJugadas, lblContDescartes, lblComodines;
 
     /** Objeto Partida que contiene la lógica y datos de la partida actual */
     private Partida partida;
@@ -55,6 +55,7 @@ public class PartidaController {
     /** Lista de cartas usadas para defensa en el turno actual */
     private ArrayList<Carta> cartasDefensa = new ArrayList<>();
 
+    private int comodinesDisponibles = 2;
 
     /**
      * Inicializa el controlador, configurando imágenes, listas, y eventos de botones.
@@ -90,6 +91,9 @@ public class PartidaController {
         imgvMazoCastillo.setImage(imagenReverso);
         imgvMazoCarJugadas.setImage(imagenReverso);
         imgvMazoCarDescartadas.setImage(imagenReverso);
+
+        //Iniciar con este texto
+        lblComodines.setText("Comodines : " + comodinesDisponibles);
     }
 
     /**
@@ -239,9 +243,13 @@ public class PartidaController {
 
             //Si no quedan cartas en la mano
             if (partida.getMano().isEmpty()) {
-                partida.setPartidaTerminada(true);
-                mostrarResultadoPartida();
-                return;
+                if (comodinesDisponibles > 0) {
+                    usarComodin();
+                } else {
+                    partida.setPartidaTerminada(true);
+                    mostrarResultadoPartida();
+                    return;
+                }
             }
 
             if (partida.isPartidaTerminada()) {
@@ -271,20 +279,28 @@ public class PartidaController {
                 desactivarModoDefensa();
 
                 if (partida.getMano().isEmpty()) {
-                    Alert sinCartas = new Alert(Alert.AlertType.INFORMATION, "Te has defendido con éxito, pero ya no te quedan cartas para continuar. Has perdido.");
-                    sinCartas.showAndWait();
+                    if (comodinesDisponibles > 0) {
+                        usarComodin();
+                    } else {
+                        Alert sinCartas = new Alert(Alert.AlertType.INFORMATION, "Te has defendido con éxito, pero ya no te quedan cartas para continuar. Has perdido.");
+                        sinCartas.showAndWait();
+                        partida.setPartidaTerminada(true);
+                        partida.registrarEstadisticas();
+                        mostrarResultadoPartida();
+                    }
+                }
+
+            } else if (partida.getMano().isEmpty()) {
+                if (comodinesDisponibles > 0) {
+                    usarComodin();
+                } else {
+                    //Si no hay cartas para defender
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "No tienes cartas suficientes para defenderte. Has perdido.");
+                    alert.showAndWait();
                     partida.setPartidaTerminada(true);
                     partida.registrarEstadisticas();
                     mostrarResultadoPartida();
                 }
-
-            } else if (partida.getMano().isEmpty()) {
-                //Si no hay cartas para defender
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "No tienes cartas suficientes para defenderte. Has perdido.");
-                alert.showAndWait();
-                partida.setPartidaTerminada(true);
-                partida.registrarEstadisticas();
-                mostrarResultadoPartida();
             }
         }
     }
@@ -343,6 +359,50 @@ public class PartidaController {
             System.out.println("Error al cargar el menú principal: " + e);
             e.printStackTrace();
         }
+    }
+
+    private void usarComodin(){
+        if (comodinesDisponibles <= 0) return;
+
+        //Mover cartas mano a descartes
+        ArrayList<Carta> manoActual = partida.getMano();
+        partida.getMazoCartasDescartadas().addAll(manoActual);
+        manoActual.clear();
+
+        //Mover carta jugada a descartes
+        ArrayList<Carta> mazoJugadas = partida.getMazoCartasJugadas();
+        if (!mazoJugadas.isEmpty()) {
+            partida.getMazoCartasDescartadas().addAll(mazoJugadas);
+            mazoJugadas.clear();
+        }
+
+        //Robar cartas del mazo posada
+        ArrayList<Carta> mazoPosada = partida.getMazoPosada();
+        for (int i = 0; i < 8 && !mazoPosada.isEmpty(); i++) {
+            manoActual.add(mazoPosada.remove(0));
+        }
+
+        //Reducir contador
+        comodinesDisponibles--;
+        lblComodines.setText("Comodines : " + comodinesDisponibles);
+
+        //Desactivar imagen si no quedan comodines
+        if (comodinesDisponibles <= 0) {
+            imgvComodin.setDisable(true);
+            imgvComodin.setOpacity(0.5);
+        }
+
+        //Reiniciar contador de defensa
+        defensaTotal = 0;
+        cartasDefensa.clear();
+        lblContDefensa.setText("0");
+
+        actualizarInterfaz();
+    }
+
+    @FXML
+    private void onComodinClicked() {
+        usarComodin();
     }
 
     /**

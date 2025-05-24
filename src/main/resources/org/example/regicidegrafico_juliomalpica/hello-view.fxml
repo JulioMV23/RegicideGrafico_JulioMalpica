@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.regicidegrafico_juliomalpica.HelloController">
+<StackPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.regicidegrafico_juliomalpica.HelloController">
    <children>
       <ImageView fitHeight="700.0" fitWidth="500.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,7 +23,7 @@
                <font>
                   <Font name="JetBrains Mono Regular" size="19.0" />
                </font></Button>
-            <Button fx:id="btnVerEstadisticas" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: e2dad8; -fx-background-radius: 12; -fx-border-color: black; -fx-border-radius: 12;" text="REGISTRAR ESTADISTICAS" textAlignment="CENTER">
+            <Button fx:id="btnVerEstadisticas" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: e2dad8; -fx-background-radius: 12; -fx-border-color: black; -fx-border-radius: 12;" text="VER ESTADISTICAS" textAlignment="CENTER">
                <font>
                   <Font name="JetBrains Mono Regular" size="19.0" />
                </font></Button>

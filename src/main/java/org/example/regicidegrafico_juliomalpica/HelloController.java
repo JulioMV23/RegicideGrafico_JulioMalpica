@@ -168,7 +168,7 @@ public class HelloController {
         try {
             Desktop.getDesktop().browse(new java.net.URI("http://youtube.com/watch?v=eSIbxYEYzLw"));
         } catch (Exception e) {
-            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "No se pudo abrir el enlace del tutorial").showAndWait();
         }
     }
 

@@ -6,14 +6,6 @@ Fecha||Cartas Jugadas||Vida pruebas.Enemigo||Estado Mano||Resultado
 2025-05-02 16:31:44||1||17||[]||Derrota
 2025-05-03 13:28:20||3||20||[{"numero":1,"palo":"Diamantes"}]||Derrota
 2025-05-04 17:50:22||2||3||[{"numero":1,"palo":"Corazones"}]||Derrota
-2025-05-04 17:55:43||1||13||[]||Derrota
-2025-05-04 17:56:10||2||7||[]||Derrota
-2025-05-04 18:01:17||2||20||[]||Derrota
-2025-05-04 18:02:29||1||15||[]||Derrota
-2025-05-04 18:02:44||2||15||[]||Derrota
-2025-05-04 18:17:56||1||16||[]||Derrota
-2025-05-04 18:18:43||2||3||[]||Derrota
-2025-05-16 16:23:23||2||7||[]||Derrota
 2025-05-16 16:23:26||2||7||[]||Derrota
 2025-05-17 11:39:42||0||20||[{"numero":7,"palo":"Treboles"},{"numero":8,"palo":"Diamantes"},{"numero":6,"palo":"Picas"},{"numero":8,"palo":"Corazones"},{"numero":2,"palo":"Treboles"},{"numero":8,"palo":"Picas"},{"numero":6,"palo":"Treboles"},{"numero":2,"palo":"Picas"}]||Derrota
 2025-05-17 11:41:19||14||10||[{"numero":7,"palo":"Treboles"},{"numero":6,"palo":"Picas"},{"numero":9,"palo":"Corazones"},{"numero":8,"palo":"Treboles"},{"numero":2,"palo":"Diamantes"},{"numero":9,"palo":"Diamantes"},{"numero":1,"palo":"Picas"},{"numero":3,"palo":"Corazones"}]||Derrota
@@ -22,3 +14,11 @@ Fecha||Cartas Jugadas||Vida pruebas.Enemigo||Estado Mano||Resultado
 2025-05-17 16:09:10||0||20||[{"numero":7,"palo":"Treboles"},{"numero":8,"palo":"Diamantes"},{"numero":6,"palo":"Picas"},{"numero":8,"palo":"Corazones"},{"numero":2,"palo":"Treboles"},{"numero":8,"palo":"Picas"},{"numero":6,"palo":"Treboles"},{"numero":2,"palo":"Picas"}]||Derrota
 2025-05-17 16:24:58||4||6||[]||Derrota
 2025-05-17 17:14:45||3||20||[]||Derrota
+2025-05-17 17:51:11||4||10||[]||Derrota
+2025-05-17 17:51:38||3||7||[]||Derrota
+2025-05-19 10:22:57||1||12||[{"numero":3,"palo":"Treboles"},{"numero":8,"palo":"Diamantes"},{"numero":1,"palo":"Treboles"},{"numero":2,"palo":"Picas"},{"numero":6,"palo":"Corazones"}]||Derrota
+2025-05-19 10:23:02||1||12||[{"numero":3,"palo":"Treboles"},{"numero":8,"palo":"Diamantes"},{"numero":1,"palo":"Treboles"},{"numero":2,"palo":"Picas"},{"numero":6,"palo":"Corazones"}]||Derrota
+2025-05-23 19:56:48||1||12||[{"numero":3,"palo":"Treboles"},{"numero":8,"palo":"Diamantes"},{"numero":1,"palo":"Treboles"},{"numero":2,"palo":"Picas"},{"numero":6,"palo":"Corazones"}]||Derrota
+2025-05-24 11:52:38||3||20||[{"numero":9,"palo":"Picas"},{"numero":1,"palo":"Corazones"},{"numero":5,"palo":"Diamantes"},{"numero":4,"palo":"Picas"},{"numero":9,"palo":"Diamantes"}]||Derrota
+2025-05-24 11:53:00||1||12||[{"numero":10,"palo":"Corazones"},{"numero":7,"palo":"Treboles"},{"numero":6,"palo":"Treboles"},{"numero":2,"palo":"Treboles"},{"numero":9,"palo":"Treboles"},{"numero":6,"palo":"Diamantes"},{"numero":10,"palo":"Diamantes"},{"numero":3,"palo":"Picas"}]||Derrota
+2025-05-24 11:54:09||1||18||[{"numero":9,"palo":"Treboles"},{"numero":3,"palo":"Diamantes"},{"numero":4,"palo":"Corazones"},{"numero":1,"palo":"Picas"},{"numero":1,"palo":"Treboles"},{"numero":10,"palo":"Picas"},{"numero":10,"palo":"Diamantes"},{"numero":9,"palo":"Picas"}]||Derrota
