@@ -5,9 +5,7 @@ import com.google.gson.Gson;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 
 /**
@@ -116,6 +114,12 @@ public class Partida {
     public Partida(){
     }
 
+    //Saber si juego un AS
+    public boolean esCompaneroAnimal(Carta carta) {
+        return carta.getNumero() == 1;
+    }
+
+
     /**
      * Generar una baraja completa con 52 cartas - 13 cartas de cada palo.
      */
@@ -123,7 +127,7 @@ public class Partida {
         String[] palos = {"Picas", "Corazones", "Treboles", "Diamantes"};
         for (String palo : palos){
             for (int i=1; i<=13; i++){
-                baraja.add(new Carta(i,palo));
+                baraja.add(new CartaNormal(i,palo));
             }
         }
     }
@@ -149,13 +153,6 @@ public class Partida {
         }
         //Resetear reduccion danio cada vez que se genera uno nuevo
         reduccionDanioEnemigo = 0;
-    }
-
-    //Metodo para probar si se generaba bien la baraja
-    public void mostrarBaraja(){
-        for(Carta carta : baraja){
-            System.out.println(carta);
-        }
     }
 
     /**
@@ -325,37 +322,144 @@ public class Partida {
         }
     }
 
+    public boolean jugadaValida(List<Carta> cartasSeleccionadas) {
+        List<String> palosVistos = new ArrayList<>();
+        for (Carta c : cartasSeleccionadas) {
+            String palo = c.getPalo();
+            if (palosVistos.contains(palo)) {
+                return false; //Si juntas dos del mismo palo salgo
+            }
+            palosVistos.add(palo);
+        }
+
+
+        if (cartasSeleccionadas.size() == 1) {
+            return true;
+        }
+
+        //Compañeros animales
+        int numCompanieros = 0;
+        for (Carta carta : cartasSeleccionadas) {
+            if (carta.esCompanieroAnimal()) {
+                numCompanieros++;
+            }
+        }
+
+        //AS emparejado con UNA carta
+        if (cartasSeleccionadas.size() == 2 && numCompanieros == 1) {
+            return true;
+        }
+
+        //Combinaciones de 2-4 cartas del mismo número, total de puntos <= 10 y sin compañeros
+        if (cartasSeleccionadas.size() >= 2 && cartasSeleccionadas.size() <= 4 && numCompanieros == 0) {
+            int numero = cartasSeleccionadas.get(0).getNumero();
+            int total = 0;
+
+            for (Carta carta : cartasSeleccionadas) {
+                if (carta.getNumero() != numero) {
+                    return false; //No son el mismo numero
+                }
+                total += carta.getNumero();
+            }
+            return total <= 10;
+        }
+        return false;
+    }
+
+
     /**
      * Metodo para jugar una carta de la mano del jugador contra el enemigo actual del castillo.
      * Se muestra el daño que se ha causado al enemigo además de la vida restante y nuevamente se muestra las
      * colecciones de las cartas restantes de la partida.
-     * @param cartaElegida índice de la carta escogida de la mano del jugador para enfrentar al enemigo
+     * @param indicesCartas índice de las cartas escogidas de la mano del jugador para enfrentar al enemigo
      */
-    public void jugarCarta (int cartaElegida){
+    public void jugarCarta (List<Integer> indicesCartas){
         //Si no hay cartas en la mano
         if (mano.isEmpty()) {
-            System.out.println("¡No tienes cartas para atacar! Has perdido.");
+            //System.out.println("¡No tienes cartas para atacar! Has perdido.");
             partidaTerminada = true;
             victoria = false;
             registrarEstadisticas();
             return;
         }
 
-        if (cartaElegida < 0 || cartaElegida >= mano.size()) {
-            System.out.println("Indice de carta no valido");
+        if (indicesCartas.isEmpty()) {
+            //System.out.println("¡No has seleccionado ninguna carta!");
             return;
         }
 
-        Carta cartaJugada = mano.remove(cartaElegida);
-        mazoCartasJugadas.add(cartaJugada);
-        cartasJugadas++;
+        //Verificar si la jugada es valida
+        List<Carta> cartasSeleccionadas = new ArrayList<>();
+        for (int idx : indicesCartas) {
+            cartasSeleccionadas.add(mano.get(idx));
+        }
 
-        //Aplicar todos los efectos de las cartas y obtenemos el daño
-        int danio = aplicarEfectosCarta(cartaJugada);
-        vidaEnemigo -= danio;
+        if (!jugadaValida(cartasSeleccionadas)) {
+            //System.out.println("¡Combinación de cartas no válida!");
+            return;
+        }
 
-        System.out.println("\nHas jugado: " + cartaJugada);
-        System.out.println("Daño causado al enemigo: " + danio);
+        //Daño total y aplicar efectos
+        int danioTotal = 0;
+        Map<String, Integer> efectosPorPalo = new HashMap<>();
+        efectosPorPalo.put("Corazones", 0);
+        efectosPorPalo.put("Diamantes", 0);
+        efectosPorPalo.put("Picas", 0);
+        efectosPorPalo.put("Treboles", 0);
+
+        for (int idx : indicesCartas) {
+            Carta carta = mano.get(idx);
+            danioTotal += carta.getNumero();
+            mazoCartasJugadas.add(carta);
+
+            //Acumular efectos por palo (si no es inmune)
+            if (castillo.isEmpty() || !carta.getPalo().equals(castillo.get(0).getPalo())) {
+                efectosPorPalo.put(carta.getPalo(), efectosPorPalo.get(carta.getPalo()) + carta.getNumero());
+            }
+        }
+
+        //Efectos por orden correcto
+        //CORAZONES
+        if (efectosPorPalo.get("Corazones") > 0) {
+            int cartasAMover = Math.min(efectosPorPalo.get("Corazones"), mazoCartasDescartadas.size());
+            for (int i = 0; i < cartasAMover; i++) {
+                mazoPosada.add(mazoCartasDescartadas.remove(0));
+            }
+            System.out.println("¡Efecto Corazones! Movidas " + cartasAMover + " cartas de descartes a posada");
+        }
+
+        //DIAMANTES
+        if (efectosPorPalo.get("Diamantes") > 0) {
+            int cartasARobar = Math.min(efectosPorPalo.get("Diamantes"), 8 - mano.size());
+            for (int i = 0; i < cartasARobar && !mazoPosada.isEmpty(); i++) {
+                mano.add(mazoPosada.remove(0));
+            }
+            System.out.println("¡Efecto Diamantes! Robadas " + cartasARobar + " cartas");
+        }
+
+        //PICAS
+        if (efectosPorPalo.get("Picas") > 0) {
+            reduccionDanioEnemigo += efectosPorPalo.get("Picas");
+            System.out.println("¡Efecto Picas! Reducción de daño aumentada en " + efectosPorPalo.get("Picas"));
+        }
+
+        //TREBOLES
+        if (efectosPorPalo.get("Treboles") > 0) {
+            danioTotal *= 2;
+            System.out.println("¡Efecto Tréboles! Daño duplicado a " + danioTotal);
+        }
+
+        //Restar vida al enemigo
+        vidaEnemigo -= danioTotal;
+        cartasJugadas += cartasSeleccionadas.size();
+
+        //Eliminar cartas jugadas de la mano
+        indicesCartas.sort(Collections.reverseOrder());
+        for (int idx : indicesCartas) {
+            mano.remove(idx);
+        }
+
+        System.out.println("Daño causado al enemigo: " + danioTotal);
         System.out.println("Vida restante enemigo: " + vidaEnemigo);
 
         //Si enemigo ha sido derrotado
@@ -388,66 +492,6 @@ public class Partida {
         //volver a mostrar las cartas restantes
         mostrarEstadoColecciones();
     }
-
-    /**
-     * Aplica todos los efectos de una carta jugada según su palo
-     * @param carta Carta que se está jugando
-     * @return Daño calculado (importante para Tréboles)
-     */
-    private int aplicarEfectosCarta(Carta carta) {
-        int valor = carta.getNumero();
-        int danio = valor; //Daño base
-
-        switch(carta.getPalo()) {
-            case "Picas":
-                reduccionDanioEnemigo += valor;
-                System.out.println("¡Efecto Picas! Daño enemigo reducido en " + valor +
-                        " puntos (Reducción total: " + reduccionDanioEnemigo + ")");
-                break;
-
-            case "Corazones":
-                if (!mazoCartasDescartadas.isEmpty()) {
-                    Collections.shuffle(mazoCartasDescartadas);
-                    int cartasAMover = Math.min(valor, mazoCartasDescartadas.size());
-                    System.out.println("¡Efecto Corazones! Moviendo " + cartasAMover + " cartas de descartes al fondo del mazo Posada");
-                    for (int i = 0; i < cartasAMover; i++) {
-                        mazoPosada.add(mazoCartasDescartadas.remove(0));
-                    }
-                } else {
-                    System.out.println("¡Efecto Corazones! No hay cartas en descartes para mover");
-                }
-                break;
-
-            case "Diamantes":
-                int cartasRobadas = 0;
-                int cartasDisponiblesParaRobar = 8 - mano.size();
-                int cartasARobar = Math.min(valor, cartasDisponiblesParaRobar);
-
-                for (int i = 0; i < cartasARobar && !mazoPosada.isEmpty(); i++) {
-                    mano.add(mazoPosada.remove(0));
-                    cartasRobadas++;
-                }
-
-                System.out.println("¡Efecto Diamantes! Robaste " + cartasRobadas + " cartas");
-                if (cartasRobadas < valor) {
-                    if (cartasDisponiblesParaRobar == 0) {
-                        System.out.println("¡Ya tienes el máximo de 8 cartas en mano!");
-                    } else if (cartasRobadas < cartasARobar) {
-                        System.out.println("El mazo Posada no tenía suficientes cartas");
-                    } else {
-                        System.out.println("Solo puedes robar hasta completar 8 cartas en mano");
-                    }
-                }
-                break;
-
-            case "Treboles":
-                danio *= 2;
-                System.out.println("¡Efecto Tréboles: Daño duplicado a " + danio + "!");
-                break;
-        }
-        return danio;
-    }
-
 
     /**
      * Prepara un nuevo enemigo en el castillo, con sus respectivas características.

@@ -4,9 +4,10 @@ package org.example.regicidegrafico_juliomalpica;
  * Clase Carta que nos permite representar una carta de una baraja compuesta por 52 cartas.
  * Cada carta tiene un número (valor del 1 al 13) y un palo (Picas, Corazones, Tréboles, Diamantes).
  */
-public class Carta {
-    private int numero;
-    private String palo;
+public abstract class Carta {
+    protected int numero;
+    protected String palo;
+    protected boolean esCompanieroAnimal;
 
     /**
      * Constructor para crear una nueva carta
@@ -16,6 +17,7 @@ public class Carta {
     public Carta(int numero, String palo) {
         this.numero = numero;
         this.palo = palo;
+        this.esCompanieroAnimal = (numero == 1);
     }
 
     /**
@@ -34,13 +36,10 @@ public class Carta {
         return palo;
     }
 
-    /**
-     * Metodo toString que devuelve la carta (número + palo)
-     * @return cadena que representa la carta (número + palo)
-     */
-    @Override
-    public String toString(){
-        String[] nombres = {"","A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-        return nombres[numero] + " de " + palo;
+    public boolean esCompanieroAnimal() {
+        return esCompanieroAnimal;
     }
+
+    public abstract String toString();
+
 }

@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 6 v3 terminada">
+    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v1 terminada&#10;Comodines">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/CartaNormal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/imagenes/fondo1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Carta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/estadisticas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/estadisticas.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/estadisticas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/estadisticas.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/imagenes/CartaInfo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/imagenes/PoderCarta.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/partida.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/partida.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/partida.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/partida.json" afterDir="false" />
     </list>
@@ -128,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747497017830</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Entrega tema 7 v1 terminada&#10;Comodines">
+      <option name="closed" value="true" />
+      <created>1748084333689</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748084333689</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +156,7 @@
     <MESSAGE value="Entrega tema 6 v1 terminada" />
     <MESSAGE value="Entrega tema 6 v2 terminada" />
     <MESSAGE value="Entrega tema 6 v3 terminada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 6 v3 terminada" />
+    <MESSAGE value="Entrega tema 7 v1 terminada&#10;Comodines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v1 terminada&#10;Comodines" />
   </component>
 </project>

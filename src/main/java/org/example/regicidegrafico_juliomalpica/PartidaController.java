@@ -3,7 +3,7 @@ package org.example.regicidegrafico_juliomalpica;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Controlador de la interfaz gráfica para la partida del juego Regicide.
@@ -56,6 +57,7 @@ public class PartidaController {
     private ArrayList<Carta> cartasDefensa = new ArrayList<>();
 
     private int comodinesDisponibles = 2;
+    private ArrayList<Integer> cartasSeleccionadas = new ArrayList<>();
 
     /**
      * Inicializa el controlador, configurando imágenes, listas, y eventos de botones.
@@ -238,7 +240,9 @@ public class PartidaController {
 
         if (!enModoDefensa) {
             //Modo ataque
-            partida.jugarCarta(indiceCarta);
+            ArrayList<Integer> indices = new ArrayList<>();
+            indices.add(indiceCarta);
+            partida.jugarCarta(indices);
             actualizarInterfaz();
 
             //Si no quedan cartas en la mano
@@ -465,36 +469,107 @@ public class PartidaController {
         }
     }
 
+    private void manejarSeleccionCarta(int indiceCarta) {
+        if (enModoDefensa) {
+            //En modo defensa, jugar la carta directamente
+            jugarCarta(indiceCarta);
+            return;
+        }
+
+        //Alternar seleccion de la carta
+        if (cartasSeleccionadas.contains(indiceCarta)) {
+            cartasSeleccionadas.remove(Integer.valueOf(indiceCarta));
+            getStackPaneCarta(cartasMano.get(indiceCarta)).setStyle("");
+        } else {
+            cartasSeleccionadas.add(indiceCarta);
+            getStackPaneCarta(cartasMano.get(indiceCarta)).setStyle("-fx-border-color: yellow; -fx-border-width: 3;");
+        }
+
+        //Si hay cartas seleccionadas, mostrar opcion para jugarlas
+        if (!cartasSeleccionadas.isEmpty()) {
+            ButtonType jugar = new ButtonType("Jugar", ButtonBar.ButtonData.OK_DONE);
+            ButtonType cancelar = new ButtonType("Cancelar", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"¿Jugar estas " + cartasSeleccionadas.size() + " cartas?", jugar, cancelar);
+
+            alert.showAndWait().ifPresent(response -> {
+                if (response == jugar) {
+                    //Comprobar si la combinación es válida
+                    ArrayList<Carta> cartasParaJugar = new ArrayList<>();
+                    for (int idx : cartasSeleccionadas) {
+                        cartasParaJugar.add(partida.getMano().get(idx));
+                    }
+
+                    if (partida.jugadaValida(cartasParaJugar)) {
+                        //Ordenar cartas seleccionadas de mayor a menor para evitar problemas al eliminar
+                        cartasSeleccionadas.sort(Collections.reverseOrder());
+
+                        ArrayList<Carta> cartasAJugar = new ArrayList<>();
+                        for (int idx : cartasSeleccionadas) {
+                            cartasAJugar.add(partida.getMano().get(idx));
+                        }
+                        partida.jugarCarta(cartasSeleccionadas);
+                        for (int idx : cartasSeleccionadas) {
+                            getStackPaneCarta(cartasMano.get(idx)).setStyle("-fx-border-color: black;");
+                        }
+
+                        cartasSeleccionadas.clear();
+                        actualizarInterfaz();
+
+                        //Comprobar si la partida ha terminado
+                        if (partida.isPartidaTerminada()) {
+                            mostrarResultadoPartida();
+                        } else if (partida.getVidaEnemigo() > 0) {
+                            mostrarDialogoDefensa();
+                            activarModoDefensa();
+                        }
+
+                    } else {
+                        Alert error = new Alert(Alert.AlertType.ERROR, "¡Combinación no válida!");
+                        error.showAndWait();
+                    }
+
+                    for (int idx : cartasSeleccionadas) {
+                        getStackPaneCarta(cartasMano.get(idx)).setStyle("-fx-border-color: black;");
+                    }
+
+                    cartasSeleccionadas.clear();
+                    actualizarInterfaz();
+                }
+            });
+        }
+    }
+
     //Clic cartas
     /** Invoca jugarCarta con índice 0 al hacer click en la primera carta */
     @FXML
-    private void onCarta1Clicked() { jugarCarta(0); }
+    private void onCarta1Clicked() { manejarSeleccionCarta(0); }
 
     /** Invoca jugarCarta con índice 1 al hacer click en la segunda carta */
     @FXML
-    private void onCarta2Clicked() { jugarCarta(1); }
+    private void onCarta2Clicked() { manejarSeleccionCarta(1); }
 
     /** Invoca jugarCarta con índice 2 al hacer click en la tercera carta */
     @FXML
-    private void onCarta3Clicked() { jugarCarta(2); }
+    private void onCarta3Clicked() { manejarSeleccionCarta(2); }
 
     /** Invoca jugarCarta con índice 3 al hacer click en la cuarta carta */
     @FXML
-    private void onCarta4Clicked() { jugarCarta(3); }
+    private void onCarta4Clicked() { manejarSeleccionCarta(3); }
 
     /** Invoca jugarCarta con índice 4 al hacer click en la quinta carta */
     @FXML
-    private void onCarta5Clicked() { jugarCarta(4); }
+    private void onCarta5Clicked() { manejarSeleccionCarta(4); }
 
     /** Invoca jugarCarta con índice 5 al hacer click en la sexta carta */
     @FXML
-    private void onCarta6Clicked() { jugarCarta(5); }
+    private void onCarta6Clicked() { manejarSeleccionCarta(5); }
 
     /** Invoca jugarCarta con índice 6 al hacer click en la séptima carta */
     @FXML
-    private void onCarta7Clicked() { jugarCarta(6); }
+    private void onCarta7Clicked() { manejarSeleccionCarta(6); }
 
     /** Invoca jugarCarta con índice 7 al hacer click en la octava carta */
     @FXML
-    private void onCarta8Clicked() { jugarCarta(7); }
+    private void onCarta8Clicked() { manejarSeleccionCarta(7); }
 }

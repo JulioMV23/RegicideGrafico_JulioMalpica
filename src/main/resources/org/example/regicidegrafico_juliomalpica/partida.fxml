@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="764.0" prefWidth="1169.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.regicidegrafico_juliomalpica.PartidaController">
+<AnchorPane prefHeight="764.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.regicidegrafico_juliomalpica.PartidaController">
    <children>
       <ImageView fitHeight="764.0" fitWidth="1241.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -128,7 +128,7 @@
          <font>
             <Font name="MV Boli" size="27.0" />
          </font></Label>
-      <Label fx:id="lblContVida" layoutX="426.0" layoutY="67.0" text="0" textAlignment="CENTER">
+      <Label fx:id="lblContVida" layoutX="418.0" layoutY="67.0" text="0" textAlignment="CENTER">
          <font>
             <Font name="MV Boli" size="64.0" />
          </font></Label>
@@ -136,7 +136,7 @@
          <font>
             <Font name="MV Boli" size="27.0" />
          </font></Label>
-      <Label fx:id="lblContAtaque" layoutX="765.0" layoutY="67.0" text="0" textAlignment="CENTER">
+      <Label fx:id="lblContAtaque" layoutX="750.0" layoutY="67.0" text="0" textAlignment="CENTER">
          <font>
             <Font name="MV Boli" size="64.0" />
          </font></Label>
@@ -145,7 +145,7 @@
             <Font name="MV Boli" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="lblContDefensa" layoutX="426.0" layoutY="314.0" prefHeight="110.0" prefWidth="46.0" text="0" textAlignment="CENTER">
+      <Label fx:id="lblContDefensa" layoutX="417.0" layoutY="314.0" prefHeight="110.0" prefWidth="46.0" text="0" textAlignment="CENTER">
          <font>
             <Font name="MV Boli" size="64.0" />
          </font>

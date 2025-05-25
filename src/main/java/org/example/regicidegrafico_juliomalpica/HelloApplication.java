@@ -9,7 +9,6 @@ import java.io.IOException;
 
 /**
  * Clase principal de la aplicación JavaFX para el juego "REGICIDE".
- *
  * Esta clase carga la interfaz gráfica definida en un archivo FXML
  * y configura la ventana principal de la aplicación (MENÚ).
  *

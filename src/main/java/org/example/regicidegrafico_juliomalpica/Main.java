@@ -126,7 +126,10 @@ public class Main {
                     eleccionCarta = Integer.parseInt(entrada) - 1;
 
                     if (eleccionCarta >= 0 && eleccionCarta < partida.getMano().size()) {
-                        partida.jugarCarta(eleccionCarta);
+                        //Cartas a jugar
+                        ArrayList<Integer> cartasAJugar = new ArrayList<>();
+                        cartasAJugar.add(eleccionCarta);
+                        partida.jugarCarta(cartasAJugar);
 
                         //Verificar si el jugador se quedó sin cartas
                         if (partida.getMano().isEmpty()) {
