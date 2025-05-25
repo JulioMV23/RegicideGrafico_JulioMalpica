@@ -66,7 +66,7 @@ public class EstadisticasController {
      */
     private void volverMenuPrincipal() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
             Stage stage = (Stage) btnVolver.getScene().getWindow();
 
             if (stage != null) {

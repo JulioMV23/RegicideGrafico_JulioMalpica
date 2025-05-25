@@ -354,7 +354,7 @@ public class PartidaController {
         alert.showAndWait();
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
             Stage stage = (Stage) btnSalir.getScene().getWindow();
 
             if (stage != null) {
@@ -430,7 +430,7 @@ public class PartidaController {
         mostrarResultadoPartida();
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
             Stage stage = (Stage) btnRendirse.getScene().getWindow();
 
             if (stage != null) {
@@ -452,7 +452,7 @@ public class PartidaController {
         partida.setPartidaTerminada(true);
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
             Stage stage = (Stage) btnSalir.getScene().getWindow();
 
             if (stage != null) {
