@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v2 terminada&#10;Todo funcional">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Carta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/CartaNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/CartaNormal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" afterDir="false" />
-    </list>
+    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v3 terminada&#10;Javadoc generado" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748182387939</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Entrega tema 7 v3 terminada&#10;Javadoc generado">
+      <option name="closed" value="true" />
+      <created>1748184495920</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1748184495920</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +161,7 @@
     <MESSAGE value="Entrega tema 6 v3 terminada" />
     <MESSAGE value="Entrega tema 7 v1 terminada&#10;Comodines" />
     <MESSAGE value="Entrega tema 7 v2 terminada&#10;Todo funcional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v2 terminada&#10;Todo funcional" />
+    <MESSAGE value="Entrega tema 7 v3 terminada&#10;Javadoc generado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v3 terminada&#10;Javadoc generado" />
   </component>
 </project>
