@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v4 terminada&#10;JAR GENERADO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/CartaAdapter.java" afterDir="false" />
+    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v5 terminada&#10;Problema con clase abstracta y metodo cargarPartida solucionado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/CartaNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/CartaNormal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/RegicideGrafico_JulioMalpica_jar/RegicideGrafico_JulioMalpica.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RegicideGrafico_JulioMalpica_jar/RegicideGrafico_JulioMalpica.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/estadisticas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/estadisticas.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/partida.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/partida.json" afterDir="false" />
     </list>
@@ -177,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748186215413</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Entrega tema 7 v5 terminada&#10;Problema con clase abstracta y metodo cargarPartida solucionado">
+      <option name="closed" value="true" />
+      <created>1748190765251</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748190765251</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +206,7 @@
     <MESSAGE value="Entrega tema 7 v2 terminada&#10;Todo funcional" />
     <MESSAGE value="Entrega tema 7 v3 terminada&#10;Javadoc generado" />
     <MESSAGE value="Entrega tema 7 v4 terminada&#10;JAR GENERADO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v4 terminada&#10;JAR GENERADO" />
+    <MESSAGE value="Entrega tema 7 v5 terminada&#10;Problema con clase abstracta y metodo cargarPartida solucionado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v5 terminada&#10;Problema con clase abstracta y metodo cargarPartida solucionado" />
   </component>
 </project>
