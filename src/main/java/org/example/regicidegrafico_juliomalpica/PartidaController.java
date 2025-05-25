@@ -55,8 +55,9 @@ public class PartidaController {
     private int defensaTotal = 0;
     /** Lista de cartas usadas para defensa en el turno actual */
     private ArrayList<Carta> cartasDefensa = new ArrayList<>();
-
+    /** Comodines disponibles para utilizar */
     private int comodinesDisponibles = 2;
+    /** Cartas seleccionadas para jugar */
     private ArrayList<Integer> cartasSeleccionadas = new ArrayList<>();
 
     /**
@@ -365,6 +366,11 @@ public class PartidaController {
         }
     }
 
+    /**
+     * Utiliza un comodín para renovar la mano del jugador.
+     * Mueve las cartas actuales a descartes, roba nuevas cartas desde mazo Posada y actualiza la interfaz.
+     * Si ya no quedan comodines, desactiva la opción visualmente.
+     */
     private void usarComodin(){
         if (comodinesDisponibles <= 0) return;
 
@@ -404,6 +410,10 @@ public class PartidaController {
         actualizarInterfaz();
     }
 
+    /**
+     * Metodo asociado al clic sobre el icono de comodín.
+     * Ejecuta la acción de usar un comodín si hay disponibles.
+     */
     @FXML
     private void onComodinClicked() {
         usarComodin();
@@ -469,6 +479,13 @@ public class PartidaController {
         }
     }
 
+    /**
+     * Maneja la lógica al seleccionar una carta de la mano.
+     * Si está en modo defensa, la carta se juega directamente.
+     * Si está en modo ataque, permite seleccionar múltiples cartas y confirmar su uso.
+     *
+     * @param indiceCarta índice de la carta seleccionada en la mano
+     */
     private void manejarSeleccionCarta(int indiceCarta) {
         if (enModoDefensa) {
             //En modo defensa, jugar la carta directamente

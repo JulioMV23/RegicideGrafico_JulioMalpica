@@ -1,8 +1,9 @@
 package org.example.regicidegrafico_juliomalpica;
 
 /**
- * Clase Carta que nos permite representar una carta de una baraja compuesta por 52 cartas.
+ * Clase abstracta Carta que nos permite representar una carta de una baraja compuesta por 52 cartas.
  * Cada carta tiene un número (valor del 1 al 13) y un palo (Picas, Corazones, Tréboles, Diamantes).
+ * Los As de cada palo seran considerados compañeros animales.
  */
 public abstract class Carta {
     protected int numero;
@@ -36,10 +37,18 @@ public abstract class Carta {
         return palo;
     }
 
+    /**
+     * Determina si esta carta es un compañero animal (As).
+     * @return TRUE = si la carta es un As (número 1), FALSE = en caso contrario
+     */
     public boolean esCompanieroAnimal() {
         return esCompanieroAnimal;
     }
 
+    /**
+     * Representación en cadena de la carta.
+     * @return Cadena que representa la carta
+     */
     public abstract String toString();
 
 }

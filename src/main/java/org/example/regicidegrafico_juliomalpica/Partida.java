@@ -51,26 +51,50 @@ public class Partida {
         return vidaEnemigo;
     }
 
+    /**
+     * Obtiene la baraja
+     * @return baraja
+     */
     public ArrayList<Carta> getBaraja() {
         return baraja;
     }
 
+    /**
+     * Obtiene cartas mazo castillo
+     * @return cartas mazo castillo
+     */
     public ArrayList<Carta> getCastillo() {
         return castillo;
     }
 
+    /**
+     * Obtiene cartas mazo posada
+     * @return cartas mazo posada
+     */
     public ArrayList<Carta> getMazoPosada() {
         return mazoPosada;
     }
 
+    /**
+     * Obtiene cartas mazo cartas jugadas
+     * @return cartas mazo cartas jugadas
+     */
     public ArrayList<Carta> getMazoCartasJugadas() {
         return mazoCartasJugadas;
     }
 
+    /**
+     * Obtiene cartas mazo cartas descartadas
+     * @return cartas mazo cartas descartadas
+     */
     public ArrayList<Carta> getMazoCartasDescartadas() {
         return mazoCartasDescartadas;
     }
 
+    /**
+     * Comprueba si es victoria
+     * @return TRUE o FALSE de victoria
+     */
     public boolean isVictoria() {
         return victoria;
     }
@@ -99,18 +123,25 @@ public class Partida {
         this.partidaTerminada = partidaTerminada;
     }
 
+    /**
+     * Obtiene el nombre del jugador
+     * @return nombre jugador
+     */
     public String getNombreJugador() {
         return nombreJugador;
     }
 
-    public void setNombreJugador(String nombreJugador) {
-        this.nombreJugador = nombreJugador;
-    }
-
+    /**
+     * Constructor para nueva partida con nombre de jugador.
+     * @param nombreJugador Nombre del jugador humano
+     */
     public Partida(String nombreJugador) {
         this.nombreJugador = nombreJugador;
     }
 
+    /**
+     * Constructor para carga de partida guardada.
+     */
     public Partida(){
     }
 
@@ -118,7 +149,6 @@ public class Partida {
     public boolean esCompaneroAnimal(Carta carta) {
         return carta.getNumero() == 1;
     }
-
 
     /**
      * Generar una baraja completa con 52 cartas - 13 cartas de cada palo.
@@ -322,6 +352,16 @@ public class Partida {
         }
     }
 
+    /**
+     * Valida si una combinación de cartas puede jugarse junta.
+     * @param cartasSeleccionadas Lista de cartas a validar
+     * @return true si es una jugada válida según reglas:
+     * <ul>
+     *    <li>Cartas de palos distintos</li>
+     *    <li>Combinaciones numéricas válidas (mismo número, suma <= 10)</li>
+     *    <li>Compañeros animales (As + 1 carta)</li>
+     * </ul>
+     */
     public boolean jugadaValida(List<Carta> cartasSeleccionadas) {
         List<String> palosVistos = new ArrayList<>();
         for (Carta c : cartasSeleccionadas) {
@@ -331,7 +371,6 @@ public class Partida {
             }
             palosVistos.add(palo);
         }
-
 
         if (cartasSeleccionadas.size() == 1) {
             return true;
@@ -368,7 +407,7 @@ public class Partida {
 
 
     /**
-     * Metodo para jugar una carta de la mano del jugador contra el enemigo actual del castillo.
+     * Metodo para jugar cartas seleccionadas contra el enemigo actual.
      * Se muestra el daño que se ha causado al enemigo además de la vida restante y nuevamente se muestra las
      * colecciones de las cartas restantes de la partida.
      * @param indicesCartas índice de las cartas escogidas de la mano del jugador para enfrentar al enemigo
