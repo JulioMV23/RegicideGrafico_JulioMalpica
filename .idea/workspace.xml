@@ -9,23 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v3 terminada&#10;Javadoc generado">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/RegicideGrafico_JulioMalpica_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/EstadisticasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/EstadisticasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Aplicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/ControladorPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/HelloApplication.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/HelloApplication.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/HelloController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/HelloController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/HelloApplication.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/HelloApplication.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/HelloController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/HelloController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/estadisticas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/estadisticas.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/menu.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v4 terminada&#10;JAR GENERADO" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +66,7 @@
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Programacion/RegicideGrafico_JulioMalpica/src/main/resources",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.19655173"
   }
@@ -170,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748184917930</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Entrega tema 7 v4 terminada&#10;JAR GENERADO">
+      <option name="closed" value="true" />
+      <created>1748186138575</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1748186138575</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,6 +184,7 @@
     <MESSAGE value="Entrega tema 7 v1 terminada&#10;Comodines" />
     <MESSAGE value="Entrega tema 7 v2 terminada&#10;Todo funcional" />
     <MESSAGE value="Entrega tema 7 v3 terminada&#10;Javadoc generado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v3 terminada&#10;Javadoc generado" />
+    <MESSAGE value="Entrega tema 7 v4 terminada&#10;JAR GENERADO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v4 terminada&#10;JAR GENERADO" />
   </component>
 </project>
