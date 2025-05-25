@@ -5,6 +5,9 @@ package org.example.regicidegrafico_juliomalpica;
  * Extiende la clase Carta para cartas numericas (1-10) y las figuras enemigas (J, Q, K)
  */
 public class CartaNormal extends Carta{
+    public CartaNormal() {
+        super(0, "");
+    }
     /**
      * Crea una nueva carta.
      * @param numero Valor de la carta (1-13 donde 1=A, 11=J, 12=Q, 13=K)

@@ -1,6 +1,7 @@
 package org.example.regicidegrafico_juliomalpica;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -32,7 +33,7 @@ public class Partida {
     private int cartasJugadas = 0;
     private static final String ARCHIVO_PARTIDA = "src/main/resources/partida.json";
     private static final String ARCHIVO_ESTADISTICAS = "src/main/resources/estadisticas.csv";
-    private static Gson gson = new Gson();
+    private static Gson gson = new GsonBuilder().registerTypeAdapter(Carta.class, new CartaAdapter()).create();
     private String nombreJugador;
 
     /**
