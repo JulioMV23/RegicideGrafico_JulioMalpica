@@ -145,7 +145,7 @@
             <Font name="MV Boli" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="lblContDefensa" layoutX="417.0" layoutY="314.0" prefHeight="110.0" prefWidth="46.0" text="0" textAlignment="CENTER">
+      <Label fx:id="lblContDefensa" layoutX="409.0" layoutY="314.0" prefHeight="110.0" prefWidth="63.0" text="0" textAlignment="CENTER">
          <font>
             <Font name="MV Boli" size="64.0" />
          </font>

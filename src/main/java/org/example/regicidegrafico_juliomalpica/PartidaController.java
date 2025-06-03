@@ -259,8 +259,10 @@ public class PartidaController {
 
             if (partida.isPartidaTerminada()) {
                 mostrarResultadoPartida();
-            } else if (partida.getVidaEnemigo() > 0) {
-                //El enemigo sigue vivo, mostrar mensaje y entrar en modo defensa
+                return;
+            }
+
+            if (partida.getVidaEnemigo() > 0 && partida.getDanioEnemigo() > 0 && !partida.isEnemigoReciente()) {
                 mostrarDialogoDefensa();
                 activarModoDefensa();
             }
@@ -270,9 +272,10 @@ public class PartidaController {
             defensaTotal += cartaSeleccionada.getNumero();
             cartasDefensa.add(cartaSeleccionada);
 
-            //Quitar carta de la mano y agregarla al mazo de jugadas
+            //Quitar carta de la mano y agregarla al mazo de descartes
             partida.getMano().remove(indiceCarta);
-            partida.getMazoCartasJugadas().add(cartaSeleccionada);
+            //partida.getMazoCartasJugadas().add(cartaSeleccionada);
+            partida.getMazoCartasDescartadas().add(cartaSeleccionada);
 
             //Actualizar defensa en pantalla
             lblContDefensa.setText(String.valueOf(defensaTotal));
@@ -493,6 +496,11 @@ public class PartidaController {
             return;
         }
 
+        if (partida.isEnemigoReciente()) {
+            partida.setEnemigoReciente(false);
+            //return;
+        }
+
         //Alternar seleccion de la carta
         if (cartasSeleccionadas.contains(indiceCarta)) {
             cartasSeleccionadas.remove(Integer.valueOf(indiceCarta));
@@ -536,7 +544,7 @@ public class PartidaController {
                         //Comprobar si la partida ha terminado
                         if (partida.isPartidaTerminada()) {
                             mostrarResultadoPartida();
-                        } else if (partida.getVidaEnemigo() > 0) {
+                        } else if (partida.getVidaEnemigo() > 0 && partida.getDanioEnemigo() > 0 && !partida.isEnemigoReciente()) {
                             mostrarDialogoDefensa();
                             activarModoDefensa();
                         }

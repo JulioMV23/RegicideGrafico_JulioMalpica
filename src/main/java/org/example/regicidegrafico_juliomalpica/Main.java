@@ -130,7 +130,6 @@ public class Main {
                         ArrayList<Integer> cartasAJugar = new ArrayList<>();
                         cartasAJugar.add(eleccionCarta);
                         partida.jugarCarta(cartasAJugar);
-
                         //Verificar si el jugador se quedó sin cartas
                         if (partida.getMano().isEmpty()) {
                             System.out.println("¡No tienes cartas para jugar! Has perdido.");

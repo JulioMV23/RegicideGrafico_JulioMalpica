@@ -35,6 +35,7 @@ public class Partida {
     private static final String ARCHIVO_ESTADISTICAS = "src/main/resources/estadisticas.csv";
     private static Gson gson = new GsonBuilder().registerTypeAdapter(Carta.class, new CartaAdapter()).create();
     private String nombreJugador;
+    private boolean enemigoReciente = false;
 
     /**
      * Obtiene la mano del jugador.
@@ -133,6 +134,22 @@ public class Partida {
     }
 
     /**
+     * Saber si enemigo es reciente
+     * @return true o false
+     */
+    public boolean isEnemigoReciente() {
+        return enemigoReciente;
+    }
+
+    /**
+     * Establecer si el enemigo es reciente
+     * @param enemigoReciente
+     */
+    public void setEnemigoReciente(boolean enemigoReciente) {
+        this.enemigoReciente = enemigoReciente;
+    }
+
+    /**
      * Constructor para nueva partida con nombre de jugador.
      * @param nombreJugador Nombre del jugador humano
      */
@@ -220,6 +237,7 @@ public class Partida {
         //Configurar primer enemigo
         if(!castillo.isEmpty()){
             configurarEnemigo(castillo.get(0));
+            enemigoReciente = true;
         }
     }
 
@@ -364,25 +382,32 @@ public class Partida {
      * </ul>
      */
     public boolean jugadaValida(List<Carta> cartasSeleccionadas) {
-        List<String> palosVistos = new ArrayList<>();
-        for (Carta c : cartasSeleccionadas) {
-            String palo = c.getPalo();
-            if (palosVistos.contains(palo)) {
-                return false; //Si juntas dos del mismo palo salgo
-            }
-            palosVistos.add(palo);
-        }
-
-        if (cartasSeleccionadas.size() == 1) {
-            return true;
-        }
-
         //Compañeros animales
         int numCompanieros = 0;
         for (Carta carta : cartasSeleccionadas) {
             if (carta.esCompanieroAnimal()) {
                 numCompanieros++;
             }
+        }
+
+        //Dos compañeros animales juntos
+        if (cartasSeleccionadas.size() == 2 && numCompanieros == 2) {
+            return true;
+        }
+
+        if (!(cartasSeleccionadas.size() == 2 && numCompanieros == 1)) {
+            List<String> palosVistos = new ArrayList<>();
+            for (Carta c : cartasSeleccionadas) {
+                String palo = c.getPalo();
+                if (palosVistos.contains(palo)) {
+                    return false; //Si juntas dos del mismo palo salgo
+                }
+                palosVistos.add(palo);
+            }
+        }
+
+        if (cartasSeleccionadas.size() == 1) {
+            return true;
         }
 
         //AS emparejado con UNA carta
@@ -416,7 +441,6 @@ public class Partida {
     public void jugarCarta (List<Integer> indicesCartas){
         //Si no hay cartas en la mano
         if (mano.isEmpty()) {
-            //System.out.println("¡No tienes cartas para atacar! Has perdido.");
             partidaTerminada = true;
             victoria = false;
             registrarEstadisticas();
@@ -424,7 +448,6 @@ public class Partida {
         }
 
         if (indicesCartas.isEmpty()) {
-            //System.out.println("¡No has seleccionado ninguna carta!");
             return;
         }
 
@@ -435,33 +458,57 @@ public class Partida {
         }
 
         if (!jugadaValida(cartasSeleccionadas)) {
-            //System.out.println("¡Combinación de cartas no válida!");
             return;
         }
 
         //Daño total y aplicar efectos
         int danioTotal = 0;
-        Map<String, Integer> efectosPorPalo = new HashMap<>();
-        efectosPorPalo.put("Corazones", 0);
-        efectosPorPalo.put("Diamantes", 0);
-        efectosPorPalo.put("Picas", 0);
-        efectosPorPalo.put("Treboles", 0);
+        boolean tieneCorazones = false;
+        boolean tieneDiamantes = false;
+        boolean tienePicas = false;
+        boolean tieneTreboles = false;
 
-        for (int idx : indicesCartas) {
-            Carta carta = mano.get(idx);
-            danioTotal += carta.getNumero();
+        String paloInmune = castillo.isEmpty() ? "" : castillo.get(0).getPalo();
+
+        for (Carta carta : cartasSeleccionadas) {
+            if (carta.esCompanieroAnimal()) {
+                danioTotal += 1;
+            } else {
+                danioTotal += carta.getNumero();
+            }
+
             mazoCartasJugadas.add(carta);
 
-            //Acumular efectos por palo (si no es inmune)
-            if (castillo.isEmpty() || !carta.getPalo().equals(castillo.get(0).getPalo())) {
-                efectosPorPalo.put(carta.getPalo(), efectosPorPalo.get(carta.getPalo()) + carta.getNumero());
+            //Palo debe activarse (solo si no es inmune)
+            if (!carta.getPalo().equals(paloInmune)) {
+                switch (carta.getPalo()) {
+                    case "Corazones":
+                        tieneCorazones = true;
+                        break;
+                    case "Diamantes":
+                        tieneDiamantes = true;
+                        break;
+                    case "Picas":
+                        tienePicas = true;
+                        break;
+                    case "Treboles":
+                        tieneTreboles = true;
+                        break;
+                }
             }
+        }
+
+        //Eliminar cartas jugadas de la mano
+        indicesCartas.sort(Collections.reverseOrder());
+        for (int idx : indicesCartas) {
+            mano.remove(idx);
         }
 
         //Efectos por orden correcto
         //CORAZONES
-        if (efectosPorPalo.get("Corazones") > 0) {
-            int cartasAMover = Math.min(efectosPorPalo.get("Corazones"), mazoCartasDescartadas.size());
+        if (tieneCorazones) {
+            int cartasAMover = Math.min(danioTotal, mazoCartasDescartadas.size());
+            Collections.shuffle(mazoCartasDescartadas);
             for (int i = 0; i < cartasAMover; i++) {
                 mazoPosada.add(mazoCartasDescartadas.remove(0));
             }
@@ -469,8 +516,8 @@ public class Partida {
         }
 
         //DIAMANTES
-        if (efectosPorPalo.get("Diamantes") > 0) {
-            int cartasARobar = Math.min(efectosPorPalo.get("Diamantes"), 8 - mano.size());
+        if (tieneDiamantes) {
+            int cartasARobar = Math.min(danioTotal, 8 - mano.size());
             for (int i = 0; i < cartasARobar && !mazoPosada.isEmpty(); i++) {
                 mano.add(mazoPosada.remove(0));
             }
@@ -478,13 +525,13 @@ public class Partida {
         }
 
         //PICAS
-        if (efectosPorPalo.get("Picas") > 0) {
-            reduccionDanioEnemigo += efectosPorPalo.get("Picas");
-            System.out.println("¡Efecto Picas! Reducción de daño aumentada en " + efectosPorPalo.get("Picas"));
+        if (tienePicas) {
+            reduccionDanioEnemigo += danioTotal;
+            System.out.println("¡Efecto Picas! Reducción de daño aumentada en " + danioTotal);
         }
 
         //TREBOLES
-        if (efectosPorPalo.get("Treboles") > 0) {
+        if (tieneTreboles) {
             danioTotal *= 2;
             System.out.println("¡Efecto Tréboles! Daño duplicado a " + danioTotal);
         }
@@ -492,12 +539,6 @@ public class Partida {
         //Restar vida al enemigo
         vidaEnemigo -= danioTotal;
         cartasJugadas += cartasSeleccionadas.size();
-
-        //Eliminar cartas jugadas de la mano
-        indicesCartas.sort(Collections.reverseOrder());
-        for (int idx : indicesCartas) {
-            mano.remove(idx);
-        }
 
         System.out.println("Daño causado al enemigo: " + danioTotal);
         System.out.println("Vida restante enemigo: " + vidaEnemigo);
@@ -508,10 +549,10 @@ public class Partida {
 
             if (vidaEnemigo == 0) {
                 System.out.println("Carta enemiga añadida al mazo Posada: " + enemigoDerrotado);
-                mazoPosada.add(enemigoDerrotado);
+                mazoPosada.add(0,enemigoDerrotado);
             } else {
                 System.out.println("Carta enemiga descartada: " + enemigoDerrotado);
-                mazoCartasDescartadas.add(enemigoDerrotado);
+                mazoCartasDescartadas.add(0, enemigoDerrotado);
             }
 
             for (Carta carta : mazoCartasJugadas){
@@ -522,6 +563,7 @@ public class Partida {
             //Si el enemigo ha muerto, preparar uno nuevo o si no quedan mas enemigos terminar partida
             if (!castillo.isEmpty()) {
                 prepararNuevoEnemigo();
+                return;
             } else {
                 partidaTerminada = true;
                 victoria = true;
@@ -539,6 +581,7 @@ public class Partida {
     private void prepararNuevoEnemigo() {
         if (!castillo.isEmpty()) {
             configurarEnemigo(castillo.get(0));
+            enemigoReciente = true;
             System.out.println("\n¡Nuevo enemigo aparece! " + castillo.get(0) + " (Vida: " + vidaEnemigo + ")");
         }
     }
