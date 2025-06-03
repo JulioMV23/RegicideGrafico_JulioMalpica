@@ -9,60 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v6 terminada&#10;Problema con clase abstracta y metodo cargarPartida solucionado">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/regicidegrafico_juliomalpica/PartidaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/module-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/module-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/Carta.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/Carta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/CartaNormal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/CartaNormal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/EstadisticasController.EstadisticaPartida.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/EstadisticasController.EstadisticaPartida.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/EstadisticasController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/EstadisticasController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/Partida.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/Partida.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/PartidaController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/PartidaController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/Carta.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/Carta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/CartaNormal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/CartaNormal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/EstadisticasController.EstadisticaPartida.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/EstadisticasController.EstadisticaPartida.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/EstadisticasController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/EstadisticasController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/Partida.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/Partida.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/PartidaController.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/class-use/PartidaController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/org.example.regicidegrafico_juliomalpica/org/example/regicidegrafico_juliomalpica/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/javadoc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/estadisticas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/estadisticas.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/partida.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/regicidegrafico_juliomalpica/partida.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="54af5d35-f5b2-4a0a-840c-ba4938b847cc" name="Changes" comment="Entrega tema 7 v7 arreglos robo cartas solucionado" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -239,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748190993923</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Entrega tema 7 v7 arreglos robo cartas solucionado">
+      <option name="closed" value="true" />
+      <created>1748946250510</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748946250510</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,6 +219,7 @@
     <MESSAGE value="Entrega tema 7 v4 terminada&#10;JAR GENERADO" />
     <MESSAGE value="Entrega tema 7 v5 terminada&#10;Problema con clase abstracta y metodo cargarPartida solucionado" />
     <MESSAGE value="Entrega tema 7 v6 terminada&#10;Problema con clase abstracta y metodo cargarPartida solucionado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v6 terminada&#10;Problema con clase abstracta y metodo cargarPartida solucionado" />
+    <MESSAGE value="Entrega tema 7 v7 arreglos robo cartas solucionado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entrega tema 7 v7 arreglos robo cartas solucionado" />
   </component>
 </project>
