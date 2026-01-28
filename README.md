@@ -1,6 +1,6 @@
 # 🃏 Regicide Gráfico
 
-Implementación del juego de cartas cooperativo **Regicide** con interfaz gráfica de usuario (GUI), desarrollado en **Java**.
+Implementación del juego de cartas cooperativo **Regicide** con temática Dragon Ball y con interfaz gráfica de usuario (GUI), desarrollado en **Java**.
 
 ## 🚀 Sobre el proyecto
 Este proyecto recrea la mecánica del juego de mesa Regicide, donde los jugadores colaboran para derrotar a 12 poderosos enemigos. La aplicación gestiona la lógica del juego, los mazos y los combates de forma visual.
